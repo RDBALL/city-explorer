@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+.citySearchWrapper {
+  margin: auto;
+  text-align: center;
+  font-size: 2rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.form-control {
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.search {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.cityMapWrapper img {
+  max-height: 100%;
+  max-width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-bottom: 1rem;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
