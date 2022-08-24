@@ -27,15 +27,21 @@ This app uses axios to handle API calls that are made from the client to the ser
 * Weatherbit
 * TheMovieDatabase
 
-![WRRC Cycle](./src/img/WRRC.jpg)
+![WRRC Cycle Lab 06](./src/img/WRRC_Lab06.jpg)
+
+![WRRC Cycle Lab 07](./src/img/WRRC_Lab07.jpg)
 
 ## Change Log
+
+* v1.0.1 - Introduced API server to handle requests
 
 * v1.0.0 - Initial repo structuring and proof of life deployment to netlify
 
 ## Credit and Collaborations
 
-* lab-06: I worked with Keven Brandison to create the WRRC graphic
+* lab-06: I worked with Keven Brandison to create the Lab06 WRRC graphic
+
+* lab-07: I worked with Jun Son to create the Lab07 WRRC graphic
 
 ---
 
@@ -78,3 +84,31 @@ Start time: 5pm
 Finish time: 6pm
 
 Actual time needed to complete: 1 hour
+
+---
+
+## **Lab 07**
+
+Name of feature: Establish back-end server capabilities by deploying this repo to Heroku
+
+Estimate of time needed to complete: 2 hours
+
+Start time: 1pm
+
+Finish time: 4:30pm
+
+Actual time needed to complete: 3.5 hours
+
+---
+
+Name of feature: Enable forecast to be pulled from backend server
+
+Estimate of time needed to complete: 2 hours
+
+Start time: 5pm
+
+Finish time: 7pm
+
+Actual time needed to complete: 2 hour
+
+---
