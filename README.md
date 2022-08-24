@@ -89,36 +89,26 @@ Actual time needed to complete: 1 hour
 
 ## **Lab 07**
 
-Name of feature: Add latitude and longitude from LocationIQ returned object
+Name of feature: Establish back-end server capabilities by deploying this repo to Heroku
 
 Estimate of time needed to complete: 2 hours
 
 Start time: 1pm
 
-Finish time: 4pm
+Finish time: 4:30pm
 
-Actual time needed to complete: 3 hours
+Actual time needed to complete: 3.5 hours
 
 ---
 
-Name of feature: Add static map image to app using the latitude and longitude coordinates
+Name of feature: Enable forecast to be pulled from backend server
 
 Estimate of time needed to complete: 2 hours
 
-Start time: 4pm
-
-Finish time: 5pm
-
-Actual time needed to complete: 1 hour
-
----
-
-Name of feature: Update CSS
-
-Estimate of time needed to complete: 1 hour
-
 Start time: 5pm
 
-Finish time: 6pm
+Finish time: 7pm
 
-Actual time needed to complete: 1 hour
+Actual time needed to complete: 2 hour
+
+---
