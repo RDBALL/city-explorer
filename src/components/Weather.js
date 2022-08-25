@@ -5,15 +5,10 @@ import Card from 'react-bootstrap/Card'
 
 class Weather extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      display: true,
-    }
-  }
-
   render() {
+
     return (
+      
       <Row>
         {this.props.data && (this.props.data.data.map(cityWeather =>
           <Col key={cityWeather.datetime}>

@@ -12,19 +12,21 @@ class LatLong extends React.Component {
   constructor() {
     super();
     this.state = {
-      userSearch: '',
+      searchQuery: '',
       location: '',
       show: 'none',
       mapImage: '',
       weather: '',
       errorMessage: '',
       error: false,
+      weatherData: [],
+      movieData: [],
     }
   }
 
   handleCitySearch = async (e) => {
     e.preventDefault();
-    const url = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.userSearch}&format=json`;
+    const url = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.searchQuery}&format=json`;
     await axios.get(url).then(
       cityNameInput => {
         console.log(cityNameInput);
@@ -46,7 +48,7 @@ class LatLong extends React.Component {
 
   handleWeather = async (e) => {
     e.preventDefault();
-    const url2 = `https://rdball-city-explore-api.herokuapp.com/forecastData?searchQuery=${this.state.userSearch}&format=json`;
+    const url2 = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.searchQuery}&lat=${this.state.lat}&lon=${this.state.lon}`;
     await axios.get(url2).then(
       response => {
         console.log(response[0]);
@@ -64,7 +66,7 @@ class LatLong extends React.Component {
   handleChange = (e) => {
     let { value } = e.target;
     value.toLowerCase();
-    this.setState({ userSearch: value })
+    this.setState({ searchQuery: value })
     console.log(value);
   }
 
@@ -93,7 +95,7 @@ class LatLong extends React.Component {
             {this.state.errorMessage}
           </Alert>
           <Form onSubmit = {this.handleWeather}>
-          <Button type='submit' className='submit'>Click for a three day forecast of {this.state.userSearch}</Button>
+          <Button type='submit' className='submit'>Click for a five day forecast</Button>
           </Form>
           <Weather data={this.state.weather}/>
         </Container>
