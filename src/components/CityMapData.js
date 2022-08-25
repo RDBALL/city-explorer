@@ -6,6 +6,8 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Weather from "./Weather";
+import Movie from "./Movie";
+
 
 class LatLong extends React.Component {
 
@@ -19,8 +21,7 @@ class LatLong extends React.Component {
       weather: '',
       errorMessage: '',
       error: false,
-      weatherData: [],
-      movieData: [],
+      movies: '',
     }
   }
 
@@ -62,6 +63,22 @@ class LatLong extends React.Component {
       })
   }
 
+  handleMovies = async (e) => {
+    e.preventDefault();
+    const url3 = `${process.env.REACT_APP_SERVER}/movies?searchQuery=${this.state.searchQuery}`;
+    await axios.get(url3).then(
+      response => {
+        console.log(response);
+        this.setState({
+          movies: response,
+        })
+      })
+      .catch((error) => {
+        const errorMessage = `${error.response.data.error}. ${error.message} (${error.code}).`;
+        this.setState({ showAlert: true, errorMessage: errorMessage })
+      })
+  }
+
   //Function to handle user input. Console.log is set to capture each keystroke entered into input field
   handleChange = (e) => {
     let { value } = e.target;
@@ -96,8 +113,12 @@ class LatLong extends React.Component {
           </Alert>
           <Form onSubmit = {this.handleWeather}>
           <Button type='submit' className='submit'>Click for a five day forecast</Button>
-          </Form>
           <Weather data={this.state.weather}/>
+          </Form>
+          <Form onSubmit = {this.handleMovies}>
+          <Button type='submit' className='submit'>Click for movies that reference this city</Button>
+          <Movie data={this.state.movies}/>
+          </Form>
         </Container>
       </>
     )
