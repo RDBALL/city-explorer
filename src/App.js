@@ -1,5 +1,6 @@
 import CityData from './components/CityMapData.js'
 import './styles/CityMapData.css';
+import './styles/movies.css'
 
 function App() {
   return (
