@@ -6,25 +6,28 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Weather from "./Weather";
+import Movie from "./Movie";
+
 
 class LatLong extends React.Component {
 
   constructor() {
     super();
     this.state = {
-      userSearch: '',
+      searchQuery: '',
       location: '',
       show: 'none',
       mapImage: '',
       weather: '',
       errorMessage: '',
       error: false,
+      movies: '',
     }
   }
 
   handleCitySearch = async (e) => {
     e.preventDefault();
-    const url = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.userSearch}&format=json`;
+    const url = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.searchQuery}&format=json`;
     await axios.get(url).then(
       cityNameInput => {
         console.log(cityNameInput);
@@ -46,7 +49,7 @@ class LatLong extends React.Component {
 
   handleWeather = async (e) => {
     e.preventDefault();
-    const url2 = `https://rdball-city-explore-api.herokuapp.com/forecastData?searchQuery=${this.state.userSearch}&format=json`;
+    const url2 = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.searchQuery}&lat=${this.state.lat}&lon=${this.state.lon}`;
     await axios.get(url2).then(
       response => {
         console.log(response[0]);
@@ -60,11 +63,27 @@ class LatLong extends React.Component {
       })
   }
 
+  handleMovies = async (e) => {
+    e.preventDefault();
+    const url3 = `${process.env.REACT_APP_SERVER}/movies?searchQuery=${this.state.searchQuery}`;
+    await axios.get(url3).then(
+      response => {
+        console.log(response);
+        this.setState({
+          movies: response,
+        })
+      })
+      .catch((error) => {
+        const errorMessage = `${error.response.data.error}. ${error.message} (${error.code}).`;
+        this.setState({ showAlert: true, errorMessage: errorMessage })
+      })
+  }
+
   //Function to handle user input. Console.log is set to capture each keystroke entered into input field
   handleChange = (e) => {
     let { value } = e.target;
     value.toLowerCase();
-    this.setState({ userSearch: value })
+    this.setState({ searchQuery: value })
     console.log(value);
   }
 
@@ -93,9 +112,13 @@ class LatLong extends React.Component {
             {this.state.errorMessage}
           </Alert>
           <Form onSubmit = {this.handleWeather}>
-          <Button type='submit' className='submit'>Click for a three day forecast of {this.state.userSearch}</Button>
-          </Form>
+          <Button type='submit' className='submit'>Click for a five day forecast</Button>
           <Weather data={this.state.weather}/>
+          </Form>
+          <Form onSubmit = {this.handleMovies}>
+          <Button type='submit' className='submit'>Click for movies that reference this city</Button>
+          <Movie data={this.state.movies}/>
+          </Form>
         </Container>
       </>
     )
