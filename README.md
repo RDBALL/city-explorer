@@ -4,7 +4,7 @@
 
 **Author**: Robert Ball
 
-**Version**: 1.0.0
+**Version**: 1.0.2
 
 ## Overview
 
@@ -31,7 +31,11 @@ This app uses axios to handle API calls that are made from the client to the ser
 
 ![WRRC Cycle Lab 07](./src/img/WRRC_Lab07.jpg)
 
+![WRRC Cycle Lab 08](./src/img/WRRC_Lab08.jpg)
+
 ## Change Log
+
+* v1.0.2 - Introduced live weather and movie database API requests
 
 * v1.0.1 - Introduced API server to handle requests
 
@@ -42,6 +46,8 @@ This app uses axios to handle API calls that are made from the client to the ser
 * lab-06: I worked with Keven Brandison to create the Lab06 WRRC graphic
 
 * lab-07: I worked with Jun Son to create the Lab07 WRRC graphic
+
+* lab-08: I worked with Armen Agabekian to create the lab08 WRRC graphic. I also collaborated with Stephen Clemmer and Keelen Fisher while configuring the weatherbit and movie database API async functions
 
 ---
 
@@ -112,3 +118,15 @@ Finish time: 7pm
 Actual time needed to complete: 2 hour
 
 ---
+
+## **Lab 08**
+
+Name of feature: Establish async functions to handle live data API requests
+
+Estimate of time needed to complete: 4 hours
+
+Start time: 1pm
+
+Finish time: 6:30pm
+
+Actual time needed to complete: 5.5 hours
