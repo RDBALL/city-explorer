@@ -8,7 +8,6 @@ import Card from 'react-bootstrap/Card';
 import Weather from "./Weather";
 import Movie from "./Movie";
 
-
 class LatLong extends React.Component {
 
   constructor() {
@@ -91,32 +90,32 @@ class LatLong extends React.Component {
     return (
       <>
         <Container className='citySearchWrapper'>
+          <Alert className="appAlert" show={this.state.error} variant="danger" onClose={() => this.setState({ error: false })} dismissible>
+            <Alert.Heading>
+              City not found, please check spelling.
+            </Alert.Heading>
+            {this.state.errorMessage}
+          </Alert>
           <Form onSubmit={this.handleCitySearch} className='search'>
             <Form.Control type='text' onChange={this.handleChange} placeholder='Input city name' />
-            <Button type='submit' className='submit'>Explore!</Button>
+            <Button type='submit' className='searchSubmit'>Explore!</Button>
           </Form>
           <Card className='cityMapWrapper' style={{ width: '100%' }}>
             <Card.Img variant="top" src={this.state.mapImage} />
-            <Card.Body>
-              <Card.Title>{this.state.location}</Card.Title>
+            <Card.Body >
+              <Card.Title className="cityLocation" >{this.state.location}</Card.Title>
               <div className='cityLatLonWrapper'>
                 <Card.Text>Latitude: {this.state.lat}</Card.Text>
                 <Card.Text>Longitude: {this.state.lon}</Card.Text>
               </div>
             </Card.Body>
           </Card>
-          <Alert show={this.state.error} variant="danger" onClose={() => this.setState({ error: false })} dismissible>
-            <Alert.Heading>
-              City not found, please check spelling.
-            </Alert.Heading>
-            {this.state.errorMessage}
-          </Alert>
           <Form onSubmit = {this.handleWeather}>
-          <Button type='submit' className='submit'>Click for a five day forecast</Button>
+          <Button type='submit' className='forecastSubmit'>Click for a five day forecast</Button>
           <Weather data={this.state.weather}/>
           </Form>
           <Form onSubmit = {this.handleMovies}>
-          <Button type='submit' className='submit'>Click for movies that reference this city</Button>
+          <Button type='submit' className='movieSubmit'>Click for movies that reference this city</Button>
           <Movie data={this.state.movies}/>
           </Form>
         </Container>

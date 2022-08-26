@@ -33,7 +33,11 @@ This app uses axios to handle API calls that are made from the client to the ser
 
 ![WRRC Cycle Lab 08](./src/img/WRRC_Lab08.jpg)
 
+![WRRC Cycle Lab 09](./src/img/WRRC_Lab09.jpg)
+
 ## Change Log
+
+* v1.0.3 - Branched app functionality into components
 
 * v1.0.2 - Introduced live weather and movie database API requests
 
@@ -48,6 +52,8 @@ This app uses axios to handle API calls that are made from the client to the ser
 * lab-07: I worked with Jun Son to create the Lab07 WRRC graphic
 
 * lab-08: I worked with Armen Agabekian to create the lab08 WRRC graphic. I also collaborated with Stephen Clemmer and Keelen Fisher while configuring the weatherbit and movie database API async functions
+
+* lab-08 I worked with Tyler Main to reinforce our understanding of the WRRC
 
 ---
 
@@ -130,3 +136,17 @@ Start time: 1pm
 Finish time: 6:30pm
 
 Actual time needed to complete: 5.5 hours
+
+---
+
+## **Lab 09**
+
+Name of feature: Break app functionality into components
+
+Estimate of time needed to complete: 4 hours
+
+Start time: 1pm
+
+Finish time: 4:30pm
+
+Actual time needed to complete: 3.5 hours

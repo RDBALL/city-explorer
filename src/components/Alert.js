@@ -4,7 +4,7 @@ class Alert extends React.Component {
   render () {
     return (
       <>
-        <div className="appAlert alert-danger" role="alert">
+        <div className="appAlert" role="alert">
           <p>
             {this.props.errorMessage}
           </p>
