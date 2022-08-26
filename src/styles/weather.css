@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+@media only screen and (min-width: 600px) {
+  .weatherCard {
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    max-height: 100%;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 5px white;
+    margin-bottom: 1rem;
+  }
+
+
+  .weatherTitle {
+    background-color: rgba(255, 217, 0, 0.87);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+  }
+
+  .weatherDescription {
+    max-height: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.877);
+    color: #fff;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+  }
+
+  .movieStats {
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(107, 107, 107, 0.4);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    width: 100%;
+    padding: 0px;
+    background-color: lightblue;
+    margin-left: -1px;
+  }
+
+  .weatherCard {
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    max-height: 100%;
+    min-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 5px white;
+    margin-bottom: 1rem;
+  }
+    
+  .weatherTitle {
+    background-color: rgba(255, 217, 0, 0.87);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+  }
+  
+  .weatherDescription {
+    max-height: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.877);
+    color: #fff;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+  }
+  
+  .movieStats {
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(107, 107, 107, 0.4);
+  }
+}

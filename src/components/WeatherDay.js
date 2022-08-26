@@ -1,8 +1,7 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card'
-import '../styles/weather.css'
 
-class Weather extends React.Component {
+class WeatherDay extends React.Component {
 
   render() {
 
@@ -11,8 +10,8 @@ class Weather extends React.Component {
         {this.props.data && (this.props.data.data.map(weatherObject =>
           <Card key={weatherObject.datetime} className='weatherCard'>
             <Card.Body>
-              <Card.Title className='weatherTitle'>{weatherObject.date}</Card.Title>
-              <Card.Text className='weatherDescription'>
+              <Card.Title>{weatherObject.date}</Card.Title>
+              <Card.Text>
                 {weatherObject.description}
               </Card.Text>
             </Card.Body>
@@ -23,4 +22,4 @@ class Weather extends React.Component {
   }
 }
 
-export default Weather;
+export default WeatherDay;

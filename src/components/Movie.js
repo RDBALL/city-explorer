@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+import CardGroup from 'react-bootstrap/CardGroup';
 import ListGroup from 'react-bootstrap/ListGroup';
 import '../styles/movies.css'
 
@@ -13,7 +13,7 @@ class Movie extends Component {
       
       <Row>
           {this.props.data && (this.props.data.data.map(movieObject =>
-            <Col key={movieObject.title + movieObject.imageUrl}>
+            <CardGroup key={movieObject.title + movieObject.imageUrl}>
               <Card className='movieCard'>
               <Card.Img variant="top" width='200px'
                 src={movieObject.imgUrl}
@@ -30,7 +30,7 @@ class Movie extends Component {
                         </ListGroup>
                 </Card.Body>
               </Card>
-            </Col>
+            </CardGroup>
           ))}
         </Row>
     )
